@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML Emoji POC</title>
+  <link rel="stylesheet" type="text/css" href="/dist/emojionearea.min.css" media="screen">
+  <style>
+    #ArticleTitle{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="ArticleTitle">
+  <div class="col-6">
+      <div id="container"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="/dist/emojionearea.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#ArticleTitle").emojioneArea({
+        container: "#container",
+        hideSource: false,
+        useSprite: false,
+        autocomplete: true,
+        pickerPosition: "bottom",
+        search: false,
+        buttonTitle: "Use the TAB key to insert emoji faster",
+        tones: false,
+        events: {
+          keyup: function (editor, event) {
+            console.log(editor);
+          },
+        }
+      });
+    });
+  </script>
+</body>
+</html>
